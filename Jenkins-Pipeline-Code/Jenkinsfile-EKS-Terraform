@@ -40,7 +40,7 @@ pipeline {
                 withAWS(credentials: 'aws-key', region: 'us-west-2') {
                 dir('EKS-TF') {
                     script {
-                        sh "terraform plan -var-file=${params.'File-Name'}"
+                        sh 'terraform plan'
                     }
                 }
                 }
